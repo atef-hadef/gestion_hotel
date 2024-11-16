@@ -19,7 +19,7 @@
     <header>
         <h1>Manage Data</h1>
         <!-- Formulaire d'ajout de réservation -->
-        <form action="/dashboard/ajouter" method="POST">
+        <form action="/back_office/ajouter" method="POST">
             <h2>Ajouter une nouvelle réservation</h2>
             <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
             <label for="date_arrive">Date Arrivée :</label>

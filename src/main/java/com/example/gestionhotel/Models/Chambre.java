@@ -18,6 +18,7 @@ public class Chambre {
         private Integer capacite;
         private String equipements;
         private Double tarif;
+        private String image;
 
 
 }

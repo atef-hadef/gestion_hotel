@@ -1,4 +1,4 @@
-/*package com.example.gestionhotel.Controllers.admin;
+package com.example.gestionhotel.Controllers.dashboard;
 
 import com.example.gestionhotel.Models.Chambre;
 import com.example.gestionhotel.Models.Reservation;
@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-public class DashboardController {
+public class ReservationController {
 
     @Autowired
     private ReservationService reservationService;
@@ -37,7 +37,7 @@ public class DashboardController {
 
 
     // Afficher la page de tableau de bord avec les réservations
-    @GetMapping("/dashboard")
+    @GetMapping("/dashboardr")
     public String afficherDashboard(Model model) {
         // Récupérer toutes les réservations depuis le service
         List<Reservation> reservations = reservationService.getAllReservations();
@@ -46,13 +46,13 @@ public class DashboardController {
         model.addAttribute("reservations", reservations);
 
         // Retourner le nom de la vue à afficher (dashboard)
-        return "dashboard";
+        return "reservation";
     }
     // Add reservation
     @GetMapping("/dashboard/ajouter")
     public String showAddReservationForm(Model model) {
         model.addAttribute("chambres", chambreRepository.findAll());
-        return "ajouterReservation"; // This should be the name of your Thymeleaf template for adding reservations
+        return "reservation"; // This should be the name of your Thymeleaf template for adding reservations
     }
     // Conversion de LocalDate à java.util.Date
     private Date convertToDate(LocalDate localDate) {
@@ -87,8 +87,7 @@ public class DashboardController {
         // Sauvegarder la réservation
         reservationRepository.save(reservation);
 
-        return "redirect:/dashboard";  // Rediriger vers la liste des réservations
+        return "redirect:/dashboardr";  // Rediriger vers la liste des réservations
     }
 
 }
-*/
