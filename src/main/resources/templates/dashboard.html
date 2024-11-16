@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+<div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <ul>
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/ajouter">Users</a></li>
+        <li><a href="#settings">Settings</a></li>
+    </ul>
+</div>
+<div class="main-content">
+
+    <h2>Liste des Réservations</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date Arrivée</th>
+            <th>Date Sortie</th>
+            <th>Nombre de Personnes</th>
+            <th>Montant Total</th>
+            <th>Numéro de Chambre</th>
+            <th>Nom Utilisateur</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Affichage des réservations -->
+        <tr th:each="reservation : ${reservations}">
+            <td th:text="${reservation.idReservation}"></td>
+            <td th:text="${reservation.date_arrive}"></td>
+            <td th:text="${reservation.date_sortir}"></td>
+            <td th:text="${reservation.nbr_personne}"></td>
+            <td th:text="${reservation.montant_total}"></td>
+            <td th:text="${reservation.chambre.numero_ch}"></td>
+            <td th:text="${reservation.user.id}"></td>
+            <td>
+                <button class="edit-button">Edit</button>
+                <button class="delete-button">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <a class="navbar-brand" href="/" id="logo"><span>H</span>OTELIER</a>
+</div>
+
+<div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="signup">
+        <form th:action="@{/login}" method="POST">
+            <label for="chk" aria-hidden="true">Login</label>
+            <input type="text" name="username" id="username" placeholder="username" required="true" />
+            <input type="password" name="password" id="password" placeholder="Password" required="true" />
+            <button >Login</button>
+        </form>
+        <p th:if="${param.error}">Invalid username or password</p>
+        <p th:if="${param.logout}">You have been logged out</p>
+    </div>
+</div>
+</body>
+</html>
