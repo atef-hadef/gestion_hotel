@@ -22,4 +22,13 @@ public class ReservationService {
     public List<Reservation> getAllReservations() {
         return reservationRepository.findAll();
     }
+
+    // Méthode pour supprimer une réservation
+    public void deleteReservation(Integer id) {
+        if (reservationRepository.existsById(id)) {
+            reservationRepository.deleteById(id);  // Supprimer la réservation par son ID
+        } else {
+            throw new RuntimeException("Réservation non trouvée avec ID " + id);
+        }
+    }
 }

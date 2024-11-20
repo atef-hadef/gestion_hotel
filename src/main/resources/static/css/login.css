@@ -20,10 +20,10 @@
     margin-bottom: 5px;
 }
 #logo span{
-    color: #ffa500;
+    color: #009CFF;
 }
 .navbar-toggler span{
-    color: #ffa500;
+    color: #009CFF;
 }
 .navbar-nav{
     margin-left: 20px;
@@ -37,11 +37,11 @@
     transition: 0.5s ease;
 }
 .nav-item .nav-link:hover{
-    background: #ffa500;
+    background: #009CFF;
     color: white;
 }
 #navbar form button{
-    background: orange;
+    background: blue;
     color: white;
     border: none;
 }
@@ -61,7 +61,7 @@ body{
     align-items: center;
     min-height: 100vh;
     font-family: 'Jost', sans-serif;
-    background: linear-gradient(to bottom, #ffa500, #b87b48, #a6a459);
+    background: linear-gradient(to bottom, #ffffff, #ffffff, #96d0f4);
 }
 .main{
     width: 350px;
@@ -81,7 +81,7 @@ body{
     height: 100%;
 }
 label{
-    color: #fff;
+    color: #009CFF;
     font-size: 2.3em;
     justify-content: center;
     display: flex;
@@ -109,7 +109,7 @@ button{
     justify-content: center;
     display: block;
     color: #fff;
-    background: #e6a848;
+    background: #6cc0f6;
     font-size: 1em;
     font-weight: bold;
     margin-top: 30px;
@@ -120,7 +120,7 @@ button{
     cursor: pointer;
 }
 button:hover{
-    background: #ef6f07;
+    background: #009CFF;
 }
 .login{
     height: 460px;
@@ -130,7 +130,7 @@ button:hover{
     transition: .8s ease-in-out;
 }
 .login label{
-    color: #ef6f07;
+    color: #009CFF;
     transform: scale(.6);
 }
 

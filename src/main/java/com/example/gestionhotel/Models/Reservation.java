@@ -19,14 +19,14 @@ public class Reservation {
     private Integer nbr_personne;
 
     private Double montant_total;
+    private String nom_client;
+    private Integer tel;
+    private Integer cin;
 
     @ManyToOne
     @JoinColumn(name = "numero_ch", referencedColumnName = "numero_ch")
     private Chambre chambre;
 
-    @ManyToOne
-    @JoinColumn(name = "id", referencedColumnName = "id")
-    private Users user;
 }
 
 

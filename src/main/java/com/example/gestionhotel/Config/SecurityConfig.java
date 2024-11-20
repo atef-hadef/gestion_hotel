@@ -17,15 +17,24 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/dashboard").authenticated() // Authentification requise pour /dashboard
+                        .requestMatchers("/dashboardr","/dash", "/chambre").authenticated() // Authentification requise pour /dashboard
                         .anyRequest().permitAll() // Toutes les autres routes sont accessibles
                 )
                 .formLogin(form -> form
                         .loginPage("/login") // Spécifie la page de connexion
-                        .defaultSuccessUrl("/dashboard", true) // Redirige après connexion
+                        .defaultSuccessUrl("/dash", true) // Redirige après connexion
                         .permitAll()
                 )
-                ;
+                .logout(logout -> logout
+                        .logoutUrl("/logout") // URL de déconnexion
+                        .logoutSuccessUrl("/login") // Redirection après déconnexion
+                        .invalidateHttpSession(true) // Invalide la session
+                        .deleteCookies("JSESSIONID") // Supprime les cookies d'authentification
+                        .permitAll()
+                )
+                .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/logout") // Désactiver la protection CSRF pour /logout
+                );
 
         return http.build();
     }

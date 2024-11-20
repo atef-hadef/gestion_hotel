@@ -23,4 +23,13 @@ public class ChambreService {
     public List<Chambre> getAllChambres() {
         return chambreRepository.findAll();
     }
+
+    // Méthode pour supprimer une chambre
+    public void deleteChambre(Integer id) {
+        if (chambreRepository.existsById(id)) {
+            chambreRepository.deleteById(id);  // Supprimer la réservation par son ID
+        } else {
+            throw new RuntimeException("Réservation non trouvée avec ID " + id);
+        }
+    }
 }

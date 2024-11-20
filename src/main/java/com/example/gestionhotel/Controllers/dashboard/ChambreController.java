@@ -13,6 +13,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -58,7 +59,6 @@ public class ChambreController {
     // Ajouter une chambre
     @PostMapping("/chambre/ajouter")
     public String addChambre(
-                                 @RequestParam("numero_ch") Integer numero_ch,
                                  @RequestParam("capacite") Integer capacite,
                                  @RequestParam("equipements") String equipements,
                                  @RequestParam("tarif") Double tarif,
@@ -78,6 +78,11 @@ public class ChambreController {
         chambreRepository.save(chambre);
 
         return "redirect:/chambre";  // Rediriger vers la liste des réservations
+    }
+    @PostMapping("/chambre/supprimer/{id}")
+    public String deleteReservation(@PathVariable Integer id) {
+        chambreService.deleteChambre(id);  // Ensure this method exists in your service
+        return "redirect:/chambre";  // Redirect to the dashboard or wherever you need
     }
 
 }

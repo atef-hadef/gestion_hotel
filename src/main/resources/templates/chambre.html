@@ -59,11 +59,11 @@
                 </div>
             </div>
             <div class="navbar-nav w-100">
-                <a href="index.html" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="dash" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
 
 
-                <a href="Chambre.html" class="nav-link active" ><i class="fa fa-chart-pie me-2"></i>Chambre</a>
-                <a href="reservation.html" class="nav-link " ><i class="fa fa-laptop me-2"></i>Reservation</a>
+                <a href="chambre" class="nav-link active" ><i class="fa fa-chart-pie me-2"></i>Chambre</a>
+                <a href="dashboardr" class="nav-link " ><i class="fa fa-laptop me-2"></i>Reservation</a>
 
             </div>
         </nav>
@@ -93,7 +93,10 @@
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">My Profile</a>
                         <a href="#" class="dropdown-item">Settings</a>
-                        <a href="#" class="dropdown-item">Log Out</a>
+                        <form action="/logout" method="POST">
+                            <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                            <button type="submit" class="dropdown-item">Log Out</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -106,7 +109,7 @@
 
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h3>Chambres List</h3>
-                <button class="btn btn-primary" onclick="openAddClubModal()">Add New Club</button>
+                <button class="btn btn-primary" onclick="openAddClubModal()">Add New Chambre</button>
             </div>
 
             <table class="table table-bordered mt-3">
@@ -136,9 +139,12 @@
                         <i class="fas fa-pen"></i> <!-- Pen icon for edit -->
                     </span>
                         <!-- Delete Icon -->
-                        <span class="text-danger ms-3" style="cursor: pointer;" onclick="deleteClub()">
-                        <i class="fas fa-trash"></i> <!-- Trash icon for delete -->
-                    </span>
+                        <form th:action="@{/chambre/supprimer/{id}(id=${chambres.numero_ch})}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this reservation?');">
+                            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+                            <button type="submit" class="btn btn-danger btn-sm ms-3">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 <!-- Add more rows dynamically as needed -->
@@ -161,10 +167,7 @@
                                 <label for="capacite" class="form-label">capacité</label>
                                 <input type="text" class="form-control" id="capacite" name="capacite" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="numero_ch" class="form-label">numero chambre</label>
-                                <input type="text" class="form-control" id="numero_ch" name="numero_ch" required>
-                            </div>
+
                             <label for="type" class="form-label">Type</label>
                             <input type="text" class="form-control" id="type" name="type" >
                             <div class="mb-3">

@@ -59,11 +59,11 @@
                 </div>
             </div>
             <div class="navbar-nav w-100">
-                <a href="index.html" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="dash" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
 
 
-                <a href="Chambre.html" class="nav-link " ><i class="fa fa-chart-pie me-2"></i>Chambre</a>
-                <a href="reservation.html" class="nav-link active" ><i class="fa fa-laptop me-2"></i>Reservation</a>
+                <a href="chambre" class="nav-link " ><i class="fa fa-chart-pie me-2"></i>Chambre</a>
+                <a href="dashboardr" class="nav-link active" ><i class="fa fa-laptop me-2"></i>Reservation</a>
 
             </div>
         </nav>
@@ -93,7 +93,10 @@
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">My Profile</a>
                         <a href="#" class="dropdown-item">Settings</a>
-                        <a href="#" class="dropdown-item">Log Out</a>
+                        <form action="/logout" method="POST">
+                            <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                            <button type="submit" class="dropdown-item">Log Out</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -115,11 +118,12 @@
                     <th>idReservation</th>
                     <th>date arriveé</th>
                     <th>date sortir</th>
-                    <th>montant total</th>
                     <th>nbr personne</th>
+                    <th>Montant total</th>
                     <th>nom client</th>
                     <th>numero telephone</th>
                     <th>numero CIN</th>
+                    <th>Numero chambre</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -131,17 +135,25 @@
                     <td th:text="${reservation.date_sortir}"></td>
                     <td th:text="${reservation.nbr_personne}"></td>
                     <td th:text="${reservation.montant_total}"></td>
+                    <td th:text="${reservation.nom_client}"></td>
+                    <td th:text="${reservation.tel}"></td>
+                    <td th:text="${reservation.cin}"></td>
                     <td th:text="${reservation.chambre.numero_ch}"></td>
-                    <td th:text="${reservation.user.id}"></td>
                     <td>
                         <!-- Edit Icon -->
-                        <span class="text-secondary" style="cursor: pointer;" onclick="openEditClubModal()">
-                        <i class="fas fa-pen"></i> <!-- Pen icon for edit -->
-                    </span>
+                        <form th:action="@{/dashboard/editer/{id}(id=${reservation.idReservation})}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to edit this reservation?');">
+                            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+                            <button type="submit" >
+                                <i class="fas fa-pen"></i> edit
+                            </button>
+                        </form>
                         <!-- Delete Icon -->
-                        <span class="text-danger ms-3" style="cursor: pointer;" onclick="deleteClub()">
-                        <i class="fas fa-trash"></i> <!-- Trash icon for delete -->
-                    </span>
+                        <form th:action="@{/dashboard/supprimer/{id}(id=${reservation.idReservation})}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this reservation?');">
+                            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+                            <button type="submit" class="btn btn-danger btn-sm ms-3">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 <!-- Add more rows dynamically as needed -->
@@ -181,16 +193,30 @@
                                 <label for="montant_total" class="form-label">Montant Total</label>
                                 <input type="number" step="0.01" class="form-control" id="montant_total" name="montant_total" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="nom_client" class="form-label">nom client</label>
+                                <input type="text" class="form-control" id="nom_client" name="nom_client" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="num_telephone" class="form-label">Numéro de téléphone</label>
+                                <input type="tel" class="form-control" id="num_telephone" name="tel"
+                                       pattern="\d{8}" required
+                                       title="Le numéro de téléphone doit contenir exactement 8 chiffres.">
+                            </div>
+                            <div class="mb-3">
+                                <label for="num_cin" class="form-label">Numéro CIN</label>
+                                <input type="text" class="form-control" id="num_cin" name="cin"
+                                       pattern="\d{8}" required
+                                       title="Le numéro de CIN doit contenir exactement 8 chiffres.">
+                            </div>
+
 
                             <div class="mb-3">
                                 <label for="numero_ch" class="form-label">Numéro de Chambre</label>
-                                <input type="number" class="form-control" id="numero_ch" name="numero_ch" required>
+                                <input type="text" class="form-control" id="numero_ch" name="numero_ch" required>
+
                             </div>
 
-                            <div class="mb-3">
-                                <label for="id" class="form-label">ID Utilisateur</label>
-                                <input type="number" class="form-control" id="id" name="id" required>
-                            </div>
 
                             <button type="submit" class="btn btn-primary w-100">Ajouter la Réservation</button>
                         </form>
