@@ -64,7 +64,6 @@
 
                 <a href="chambre" class="nav-link " ><i class="fa fa-chart-pie me-2"></i>Chambre</a>
                 <a href="dashboardr" class="nav-link active" ><i class="fa fa-laptop me-2"></i>Reservation</a>
-                <a href="addreservation" class="nav-link active" ><i class="fa fa-laptop me-2"></i>add</a>
             </div>
         </nav>
     </div>
@@ -141,12 +140,7 @@
                     <td th:text="${reservation.chambre.numero_ch}"></td>
                     <td>
                         <!-- Edit Icon -->
-                        <form th:action="@{/editer/{id}(id=${reservation.idReservation})}" method="get" style="display: inline;" onsubmit="return confirm('Are you sure you want to edit this reservation?');">
-                            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
-                            <button type="submit" >
-                                <i class="fas fa-pen"></i> edit
-                            </button>
-                        </form>
+                        <a th:href="@{/edit/{id}(id=${reservation.idReservation})}">Modifier</a>
                         <!-- Delete Icon -->
                         <form th:action="@{/dashboard/supprimer/{id}(id=${reservation.idReservation})}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this reservation?');">
                             <input type="hidden" name="_csrf" th:value="${_csrf.token}" />

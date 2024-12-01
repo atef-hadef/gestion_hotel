@@ -3,6 +3,7 @@ package com.example.gestionhotel.Models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -14,8 +15,12 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date_arrive;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date_sortir;
+
     private Integer nbr_personne;
 
     private Double montant_total;

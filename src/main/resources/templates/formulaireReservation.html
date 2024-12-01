@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin: 20px 0 40px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1 th:if="${reservation.idReservation != null}">Modifier reservation</h1>
+<h1 th:if="${reservation.idReservation == null}">Ajouter une reservation</h1>
+<form th:action="@{/edit/{id}(id=${reservation.idReservation})}" th:object="${reservation}" method="post" enctype="multipart/form-data">
+    <label for="nom_client">Nom du client:</label>
+    <input type="text" id="nom_client" name="nom_client" th:value="${reservation.nom_client}" required>
+    <br>
+
+    <label for="tel">Numéro de téléphone:</label>
+    <input type="tel" id="tel" name="tel" th:value="${reservation.tel}" required>
+    <br>
+
+    <label for="cin">CIN:</label>
+    <input type="text" id="cin" name="cin" th:value="${reservation.cin}" required>
+    <br>
+
+    <label for="nbr_personne">Nombre de personnes:</label>
+    <input type="number" id="nbr_personne" name="nbr_personne" th:value="${reservation.nbr_personne}" required>
+    <br>
+
+    <label for="date_arrive">Date d'arrivée:</label>
+    <input type="date" id="date_arrive" name="date_arrive" th:value="${#dates.format(reservation.date_arrive, 'yyyy-MM-dd')}" required>
+    <br>
+
+    <label for="date_sortir">Date de départ:</label>
+    <input type="date" id="date_sortir" name="date_sortir" th:value="${#dates.format(reservation.date_sortir, 'yyyy-MM-dd')}" required>
+    <br>
+
+    <label for="montant_total">Montant total:</label>
+    <input type="number" id="montant_total" name="montant_total" th:value="${reservation.montant_total}" step="0.01" required>
+    <br>
+
+    <label for="numero_ch">Numéro de chambre</label>
+    <input type="text" id="numero_ch" name="chambre.numero_ch" th:field="*{chambre.numero_ch}" required />
+    <br>
+
+    <button type="submit">Enregistrer les modifications</button>
+</form>
+<a href="/dashboardr">Retour à la liste</a>
+</body>
+</html>

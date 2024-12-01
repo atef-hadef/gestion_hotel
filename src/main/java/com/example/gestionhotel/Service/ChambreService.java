@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ChambreService {
     @Autowired
@@ -32,4 +34,8 @@ public class ChambreService {
             throw new RuntimeException("Réservation non trouvée avec ID " + id);
         }
     }
+    public Optional<Chambre> getChambreById(Integer id) {
+        return chambreRepository.findById(id);
+    }
+
 }

@@ -135,9 +135,7 @@
                     <td th:text="${chambres.image}"></td>
                     <td>
                         <!-- Edit Icon -->
-                        <span class="text-secondary" style="cursor: pointer;" onclick="openEditClubModal()">
-                        <i class="fas fa-pen"></i> <!-- Pen icon for edit -->
-                    </span>
+                        <a th:href="@{/modifier/{id}(id=${chambres.numero_ch})}">Modifier</a>
                         <!-- Delete Icon -->
                         <form th:action="@{/chambre/supprimer/{id}(id=${chambres.numero_ch})}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this reservation?');">
                             <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
@@ -182,7 +180,7 @@
                                 <label for="image" class="form-label">Club Image</label>
                                 <input type="file" class="form-control" id="image" name="image" accept="image/*">
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Save Club</button>
+                            <button type="submit" class="btn btn-primary w-100">Save chambre</button>
                         </form>
                     </div>
                 </div>

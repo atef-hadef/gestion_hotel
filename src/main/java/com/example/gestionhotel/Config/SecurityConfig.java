@@ -17,7 +17,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/dashboardr","/dash", "/chambre").authenticated() // Authentification requise pour /dashboard
+                        .requestMatchers("/dashboardr","/dash", "/chambre","/modifier/{id}").authenticated() // Authentification requise pour /dashboard
                         .anyRequest().permitAll() // Toutes les autres routes sont accessibles
                 )
                 .formLogin(form -> form

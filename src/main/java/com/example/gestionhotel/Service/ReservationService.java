@@ -1,6 +1,7 @@
 package com.example.gestionhotel.Service;
 
 
+import com.example.gestionhotel.Models.Chambre;
 import com.example.gestionhotel.Models.Reservation;
 import com.example.gestionhotel.Repository.ReservationRepository;
 import jakarta.transaction.Transactional;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReservationService {
@@ -33,13 +35,8 @@ public class ReservationService {
         }
 
     }
-    public Reservation findById(Integer id) {
-        return reservationRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Réservation non trouvée avec cet ID: " + id));
-    }
 
-    @Transactional
-    public Reservation update(Reservation reservation) {
-        return reservationRepository.save(reservation);
+    public Optional<Reservation> getReservationById(Integer id) {
+        return reservationRepository.findById(id);
     }
 }

@@ -12,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -83,6 +80,19 @@ public class ChambreController {
     public String deleteReservation(@PathVariable Integer id) {
         chambreService.deleteChambre(id);  // Ensure this method exists in your service
         return "redirect:/chambre";  // Redirect to the dashboard or wherever you need
+    }
+
+    @GetMapping("/modifier/{id}")
+    public String afficherFormulaireModification(@PathVariable Integer id, Model model) {
+        chambreService.getChambreById(id).ifPresent(chambre -> model.addAttribute("chambre", chambre));
+        return "formulaire";
+    }
+
+    @PostMapping("/modifier/{id}")
+    public String modifierChambre(@PathVariable Integer id, @ModelAttribute Chambre chambre) {
+        chambre.setNumero_ch(id);
+        chambreService.ajouterChambres(chambre);
+        return "redirect:/chambre";
     }
 
 }
