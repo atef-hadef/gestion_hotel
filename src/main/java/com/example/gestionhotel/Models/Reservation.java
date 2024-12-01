@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
 
     private Date date_arrive;

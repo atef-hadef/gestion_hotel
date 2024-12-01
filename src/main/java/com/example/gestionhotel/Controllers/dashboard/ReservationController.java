@@ -26,13 +26,13 @@ public class ReservationController {
     private ReservationService reservationService;
 
     @Autowired
-    private UserRepository userRepository;  // Injection de UserRepository
+    private UserRepository userRepository;
 
     @Autowired
-    private ChambreRepository chambreRepository;  // Injection de ChambreRepository
+    private ChambreRepository chambreRepository;
 
     @Autowired
-    private ReservationRepository reservationRepository;  // Injection de ReservationRepository
+    private ReservationRepository reservationRepository;
 
 
     // Afficher la page de tableau de bord avec les réservations
@@ -52,7 +52,8 @@ public class ReservationController {
     public String showAddReservationForm(Model model) {
         List<Chambre> chambres = chambreRepository.findAll();
         model.addAttribute("chambres", chambres);
-        return "reservation"; // This should be the name of your Thymeleaf template for adding reservations
+
+        return "reservation"; //template for adding reservations
     }
     // Conversion de LocalDate à java.util.Date
     private Date convertToDate(LocalDate localDate) {
@@ -60,7 +61,7 @@ public class ReservationController {
     }
     // Ajouter une réservation
     @PostMapping("/dashboard/ajouter")
-    public String addReservation(
+    public String ajouterReservation(
                                  @RequestParam("numero_ch") Integer numero_ch,
                                  @RequestParam("date_arrive") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date_arrive,
                                  @RequestParam("date_sortir") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date_sortir,
@@ -103,9 +104,26 @@ public class ReservationController {
 
         //////////////////////////////////////////edit/////////////////////
 
+    @GetMapping("/dashboard/editer")
+    public String showEditReservationForm(@PathVariable("idReservation") Integer idReservation, Model model) {
+        // Récupérer la réservation existante par son ID
+        Reservation reservation = reservationRepository.findById(idReservation)
+                .orElseThrow(() -> new IllegalArgumentException("Réservation introuvable"));
+
+        // Récupérer toutes les chambres disponibles pour permettre la sélection
+        List<Chambre> chambres = chambreRepository.findAll();
+
+        // Ajouter les données nécessaires au modèle pour le formulaire
+        model.addAttribute("reservation", reservation);
+        model.addAttribute("chambres", chambres);
+
+        // Retourner le nom de la vue qui affiche le formulaire de modification
+        return "ajouterReservation";  // Remplacez ce nom par le nom de votre template Thymeleaf
+    }
+
         // Méthode POST pour traiter les modifications
-        @PostMapping("/dashboard/editer/{id}")
-        public String editReservation(@RequestParam Integer id,
+        @PostMapping("/dashboard/editer")
+        public String editReservation(@PathVariable Integer idReservation,
                                       @RequestParam("numero_ch") Integer numero_ch,
                                       @RequestParam("date_arrive") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date_arrive,
                                       @RequestParam("date_sortir") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date_sortir,
@@ -116,7 +134,7 @@ public class ReservationController {
                                       @RequestParam("nom_client") String nom_client) {
 
             // Récupérer la réservation existante
-            Reservation reservation = reservationRepository.findById(id)
+            Reservation reservation = reservationRepository.findById(idReservation)
                     .orElseThrow(() -> new IllegalArgumentException("Réservation introuvable"));
 
             // Récupérer la chambre sélectionnée
@@ -139,6 +157,26 @@ public class ReservationController {
             // Rediriger vers le tableau de bord des réservations
             return "redirect:/dashboardr";
         }
+
+
+    // Méthode pour afficher le formulaire de modification
+    @GetMapping("/editer/{id}")
+    public String editReservation(@PathVariable Integer id, Model model) {
+        // Récupère la réservation à partir de la base de données
+        Reservation reservation = reservationService.findById(id);
+        model.addAttribute("reservation", reservation);
+        return "ajouterReservation";  // Cette page contient ton formulaire de modification
+    }
+
+    // Méthode pour traiter le formulaire de modification
+    @PostMapping("/editer/{id}")
+    public String updateReservation(@ModelAttribute Reservation reservation) {
+        // Mets à jour la réservation dans la base de données
+        reservationService.update(reservation);
+        return "redirect:/dashboardr";  // Rediriger vers la page des réservations après la modification
+    }
+
+
 
 
     }

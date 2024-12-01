@@ -11,7 +11,7 @@ import lombok.Setter;
 @Entity
 public class Chambre {
         @Id
-        @GeneratedValue(strategy= GenerationType.AUTO)
+        @GeneratedValue(strategy= GenerationType.IDENTITY)
         private Integer numero_ch;
 
         private String type;

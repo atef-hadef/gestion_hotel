@@ -11,6 +11,4 @@ public class LoginController {
         return "login"; // Retourne la vue login.html
     }
 
-
-
 }

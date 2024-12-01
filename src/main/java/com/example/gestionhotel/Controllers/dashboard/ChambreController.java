@@ -54,7 +54,7 @@ public class ChambreController {
     @GetMapping("/chambre/ajouter")
     public String showAddChambreForm(Model model) {
         model.addAttribute("chambres", chambreRepository.findAll());
-        return "chambre"; // This should be the name of your Thymeleaf template for adding reservations
+        return "chambre"; //  template for adding chambres
     }
     // Ajouter une chambre
     @PostMapping("/chambre/ajouter")
