@@ -10,6 +10,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class GestionhotelApplication {
 	public static void main(String[] args){
 		SpringApplication.run(GestionhotelApplication.class, args);
+	}{
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String rawPassword = "123456789"; // Remplacez par votre mot de passe
+		String hashedPassword = passwordEncoder.encode(rawPassword);
+		System.out.println("Mot de passe haché : " + hashedPassword);
 	}
 
 

@@ -1,0 +1,31 @@
+<configuration>
+
+    <!-- Logger pour les logs dans la console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %level - %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Logger pour enregistrer les logs dans un fichier -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/gestionhotel.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/gestionhotel-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory> <!-- Conserver 30 fichiers de log -->
+            <totalSizeCap>1GB</totalSizeCap> <!-- Limiter la taille totale des fichiers de log -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %level - %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Définir les appenders à utiliser -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+    <!-- Définir le niveau de log pour votre package spécifique -->
+    <logger name="com.example.gestionhotel" level="DEBUG" />
+</configuration>

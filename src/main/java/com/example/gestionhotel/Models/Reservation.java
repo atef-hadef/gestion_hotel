@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Setter
@@ -16,10 +17,10 @@ public class Reservation {
     private Integer idReservation;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date_arrive;
+    private LocalDate date_arrive;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date_sortir;
+    private LocalDate date_sortir;
 
     private Integer nbr_personne;
 

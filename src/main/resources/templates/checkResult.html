@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vérifier Disponibilité</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="number"],
+        input[type="date"],
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        button:focus {
+            outline: none;
+            border-color: #5b9bd5;
+        }
+
+        button {
+            background-color: #5b9bd5;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4a8bc2;
+        }
+
+        .message {
+            color: #d9534f;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<form action="/check" method="post" style="display: inline;" onsubmit="return confirm("${message}")">
+    <h1>Vérifier Disponibilité</h1>
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+    <input type="number" name="numero_ch" placeholder="ID de la chambre" required>
+    <input type="date" name="date_arrive" required>
+    <input type="date" name="date_sortir" required>
+    <button type="submit">Vérifier Disponibilité</button>
+<div th:if="${message}" class="message">
+    <p th:text="${message}"></p>
+</div>
+<a href="/dashboardr">Retour à la liste</a>
+</form>
+
+
+
+</body>
+</html>

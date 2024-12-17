@@ -135,7 +135,7 @@
                             <div class="position-relative">
                                 <img class="img-fluid" th:src="@{/img/{image}(image=${chambre.image})}" alt="Room Image">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4"
-                                       th:text="${chambre.tarif} + '/Night'"></small>
+                                       th:text="'$'+${chambre.tarif} + '/Night'"></small>
                             </div>
                             <div class="p-4 mt-2">
                                 <div class="d-flex justify-content-between mb-3">
@@ -155,9 +155,7 @@
 
                                 </div>
                                 <p class="text-body mb-3" th:text="${chambre.equipements}">Room Description</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

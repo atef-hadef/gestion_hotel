@@ -15,18 +15,15 @@ public class ChambreService {
     @Autowired
     private ChambreRepository chambreRepository;
 
-    // Ajouter une nouvelle réservation
     public Chambre ajouterChambres(Chambre chambre) {
         return chambreRepository.save(chambre);
 
     }
 
-    // Récupérer toutes les réservations
     public List<Chambre> getAllChambres() {
         return chambreRepository.findAll();
     }
 
-    // Méthode pour supprimer une chambre
     public void deleteChambre(Integer id) {
         if (chambreRepository.existsById(id)) {
             chambreRepository.deleteById(id);  // Supprimer la réservation par son ID
@@ -37,5 +34,14 @@ public class ChambreService {
     public Optional<Chambre> getChambreById(Integer id) {
         return chambreRepository.findById(id);
     }
+
+    public List<Chambre> searchChambres(String keyword) {
+        if (keyword != null && !keyword.isEmpty()) {
+            return chambreRepository.findByTypeContainingIgnoreCase(keyword);
+        }
+        return chambreRepository.findAll();
+    }
+
+
 
 }

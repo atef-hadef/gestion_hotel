@@ -5,17 +5,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 @Getter
 @Setter
-public class Users {
+public class Admin {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     private String username;
-    private String numtel;
+    private String password;
 
 }

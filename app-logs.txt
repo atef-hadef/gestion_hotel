@@ -1,0 +1,29 @@
+2024-12-15T18:39:19.457+01:00  INFO 9344 --- [gestionhotel] [restartedMain] c.e.g.GestionhotelApplication            : Starting GestionhotelApplication using Java 21.0.3 with PID 9344 (D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel\target\classes started by hadef in D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel)
+2024-12-15T18:39:19.458+01:00  INFO 9344 --- [gestionhotel] [restartedMain] c.e.g.GestionhotelApplication            : No active profile set, falling back to 1 default profile: "default"
+2024-12-15T18:39:19.705+01:00  INFO 9344 --- [gestionhotel] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15T18:39:19.722+01:00  INFO 9344 --- [gestionhotel] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2024-12-15T18:39:19.859+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2024-12-15T18:39:19.860+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-15T18:39:19.860+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-15T18:39:19.878+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-15T18:39:19.878+01:00  INFO 9344 --- [gestionhotel] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 417 ms
+2024-12-15T18:39:19.929+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15T18:39:19.931+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-15T18:39:19.940+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15T18:39:19.941+01:00  INFO 9344 --- [gestionhotel] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-12-15T18:39:19.945+01:00  INFO 9344 --- [gestionhotel] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@48bd5490
+2024-12-15T18:39:19.945+01:00  INFO 9344 --- [gestionhotel] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-12-15T18:39:19.946+01:00  WARN 9344 --- [gestionhotel] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-15T18:39:19.947+01:00  WARN 9344 --- [gestionhotel] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-15T18:39:20.016+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15T18:39:20.087+01:00  INFO 9344 --- [gestionhotel] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T18:39:20.324+01:00  WARN 9344 --- [gestionhotel] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15T18:39:20.338+01:00  INFO 9344 --- [gestionhotel] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminService
+2024-12-15T18:39:20.491+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-15T18:39:20.505+01:00  INFO 9344 --- [gestionhotel] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/'
+2024-12-15T18:39:20.509+01:00  INFO 9344 --- [gestionhotel] [restartedMain] c.e.g.GestionhotelApplication            : Started GestionhotelApplication in 1.129 seconds (process running for 128.389)
+2024-12-15T18:39:20.511+01:00  INFO 9344 --- [gestionhotel] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-12-15T18:43:57.340+01:00  INFO 9344 --- [gestionhotel] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-12-15T18:43:57.345+01:00  INFO 9344 --- [gestionhotel] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15T18:43:57.346+01:00  INFO 9344 --- [gestionhotel] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-12-15T18:43:57.349+01:00  INFO 9344 --- [gestionhotel] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

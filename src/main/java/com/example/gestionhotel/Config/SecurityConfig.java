@@ -1,7 +1,12 @@
 package com.example.gestionhotel.Config;
 
+import com.example.gestionhotel.Service.AdminService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,45 +18,39 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
+    @Autowired
+    private AdminService adminService;
+
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/dashboardr","/dash", "/chambre","/modifier/{id}").authenticated() // Authentification requise pour /dashboard
-                        .anyRequest().permitAll() // Toutes les autres routes sont accessibles
+                        .requestMatchers("/dashboardr", "/dash", "/chambre", "/modifier/{id}", "/edit/{id}")
+                        .hasRole("ADMIN")  // Autoriser uniquement les utilisateurs avec le rôle ADMIN
+                        .anyRequest().permitAll()  // Toutes les autres requêtes sont permises
                 )
                 .formLogin(form -> form
-                        .loginPage("/login") // Spécifie la page de connexion
-                        .defaultSuccessUrl("/dash", true) // Redirige après connexion
-                        .permitAll()
+                        .loginPage("/login")  // Page de login personnalisée
+                        .defaultSuccessUrl("/dash", true)  // Page après une connexion réussie
+                        .permitAll()  // Permettre l'accès à la page de login à tout le monde
                 )
                 .logout(logout -> logout
-                        .logoutUrl("/logout") // URL de déconnexion
-                        .logoutSuccessUrl("/login") // Redirection après déconnexion
-                        .invalidateHttpSession(true) // Invalide la session
-                        .deleteCookies("JSESSIONID") // Supprime les cookies d'authentification
-                        .permitAll()
+                        .logoutUrl("/logout")  // URL pour se déconnecter
+                        .logoutSuccessUrl("/login")  // Page après la déconnexion
+                        .invalidateHttpSession(true)  // Invalider la session
+                        .deleteCookies("JSESSIONID")  // Supprimer les cookies de session
+                        .permitAll()  // Permettre l'accès au logout à tout le monde
                 )
                 .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/logout") // Désactiver la protection CSRF pour /logout
+                        .ignoringRequestMatchers("/logout")  // Ignorer la protection CSRF pour l'URL de logout
                 );
-
         return http.build();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();  // Utilisation de BCrypt pour le hash des mots de passe
     }
 
-    @Bean
-    public InMemoryUserDetailsManager userDetailsService() {
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password(passwordEncoder().encode("admin"))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin);
-    }
 }

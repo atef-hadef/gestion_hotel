@@ -72,9 +72,10 @@
     </style>
 </head>
 <body>
-<h1 th:if="${chambre.numero_ch != null}">Modifier Chambre</h1>
-<h1 th:if="${chambre.numero_ch == null}">Ajouter une Chambre</h1>
+
 <form th:action="@{/modifier/{id}(id=${chambre.numero_ch})}" th:object="${chambre}" method="post" enctype="multipart/form-data">
+    <h1 th:if="${chambre.numero_ch != null}">Modifier Chambre</h1>
+    <h1 th:if="${chambre.numero_ch == null}">Ajouter une Chambre</h1>
     <input type="hidden" th:field="*{numero_ch}" />
     <label>Type :</label>
     <input type="text" th:field="*{type}" />
@@ -87,7 +88,8 @@
     <label>Image (URL) :</label>
     <input type="text" th:field="*{image}" />
     <button type="submit">Enregistrer</button>
+    <a href="/chambre">Retour à la liste</a>
 </form>
-<a href="/chambre">Retour à la liste</a>
+
 </body>
 </html>

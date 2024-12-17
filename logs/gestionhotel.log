@@ -1,0 +1,167 @@
+2024-12-17 20:23:18 - INFO - c.e.g.GestionhotelApplication - Starting GestionhotelApplication using Java 21.0.3 with PID 2144 (D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel\target\classes started by hadef in D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel)
+2024-12-17 20:23:18 - DEBUG - c.e.g.GestionhotelApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-17 20:23:18 - INFO - c.e.g.GestionhotelApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-17 20:23:18 - INFO - o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-17 20:23:18 - INFO - o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-17 20:23:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 20:23:19 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
+2024-12-17 20:23:19 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-12-17 20:23:19 - INFO - o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8087"]
+2024-12-17 20:23:19 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 20:23:19 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 20:23:19 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 20:23:19 - INFO - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1684 ms
+2024-12-17 20:23:20 - INFO - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 20:23:20 - INFO - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-17 20:23:20 - INFO - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 20:23:20 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 20:23:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-17 20:23:20 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5537263d
+2024-12-17 20:23:20 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-17 20:23:20 - WARN - org.hibernate.dialect.Dialect - HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-17 20:23:20 - WARN - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 20:23:21 - INFO - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 20:23:21 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 20:23:21 - INFO - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-17 20:23:22 - WARN - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-17 20:23:22 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name adminService
+2024-12-17 20:23:22 - INFO - o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-17 20:23:22 - INFO - o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8087"]
+2024-12-17 20:23:22 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-12-17 20:23:22 - INFO - c.e.g.GestionhotelApplication - Started GestionhotelApplication in 5.447 seconds (process running for 6.475)
+2024-12-17 20:29:42 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17 20:29:42 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-17 20:29:42 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 21 ms
+2024-12-17 20:29:42 - WARN - o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [117] milliseconds.
+2024-12-17 20:29:46 - INFO - o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-12-17 20:29:46 - INFO - o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8087"]
+2024-12-17 20:29:46 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 20:29:46 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-17 20:29:46 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-17 20:29:46 - INFO - c.e.g.GestionhotelApplication - Starting GestionhotelApplication using Java 21.0.3 with PID 2144 (D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel\target\classes started by hadef in D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel)
+2024-12-17 20:29:46 - DEBUG - c.e.g.GestionhotelApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-17 20:29:46 - INFO - c.e.g.GestionhotelApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-17 20:29:47 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 20:29:47 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2024-12-17 20:29:47 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-12-17 20:29:47 - INFO - o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8087"]
+2024-12-17 20:29:47 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 20:29:47 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 20:29:47 - INFO - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 20:29:47 - INFO - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 528 ms
+2024-12-17 20:29:47 - INFO - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 20:29:47 - INFO - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 20:29:47 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 20:29:47 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-12-17 20:29:47 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22ccdaba
+2024-12-17 20:29:47 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-12-17 20:29:47 - WARN - org.hibernate.dialect.Dialect - HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-17 20:29:47 - WARN - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 20:29:47 - INFO - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 20:29:47 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 20:29:48 - WARN - o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'adminService': Error creating bean with name 'adminService' defined in file [D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel\target\classes\com\example\gestionhotel\Service\AdminService.class]: com/example/gestionhotel/Controllers/admin/LoginController
+2024-12-17 20:29:48 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 20:29:48 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2024-12-17 20:29:48 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2024-12-17 20:29:48 - INFO - o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-12-17 20:29:48 - INFO - o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-17 20:29:48 - ERROR - o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'adminService': Error creating bean with name 'adminService' defined in file [D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel\target\classes\com\example\gestionhotel\Service\AdminService.class]: com/example/gestionhotel/Controllers/admin/LoginController
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.example.gestionhotel.GestionhotelApplication.main(GestionhotelApplication.java:12)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService' defined in file [D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel\target\classes\com\example\gestionhotel\Service\AdminService.class]: com/example/gestionhotel/Controllers/admin/LoginController
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/gestionhotel/Controllers/admin/LoginController
+	at com.example.gestionhotel.Service.AdminService.<clinit>(AdminService.java:20)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.ensureClassInitialized(MethodHandleAccessorFactory.java:300)
+	at java.base/jdk.internal.reflect.MethodHandleAccessorFactory.newConstructorAccessor(MethodHandleAccessorFactory.java:103)
+	at java.base/jdk.internal.reflect.ReflectionFactory.newConstructorAccessor(ReflectionFactory.java:200)
+	at java.base/java.lang.reflect.Constructor.acquireConstructorAccessor(Constructor.java:549)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:208)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	... 36 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.gestionhotel.Controllers.admin.LoginController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 48 common frames omitted
+2024-12-17 20:29:49 - INFO - c.e.g.GestionhotelApplication - Starting GestionhotelApplication using Java 21.0.3 with PID 2144 (D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel\target\classes started by hadef in D:\TEK-UP\Projet_Spring\gestionhotel\gestionhotel)
+2024-12-17 20:29:49 - DEBUG - c.e.g.GestionhotelApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-17 20:29:49 - INFO - c.e.g.GestionhotelApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-17 20:29:49 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 20:29:49 - INFO - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 3 JPA repository interfaces.
+2024-12-17 20:29:49 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-12-17 20:29:49 - INFO - o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8087"]
+2024-12-17 20:29:49 - INFO - o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 20:29:49 - INFO - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 20:29:49 - INFO - o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 20:29:49 - INFO - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 383 ms
+2024-12-17 20:29:50 - INFO - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 20:29:50 - INFO - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 20:29:50 - INFO - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 20:29:50 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2024-12-17 20:29:50 - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@cce3ffe
+2024-12-17 20:29:50 - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2024-12-17 20:29:50 - WARN - org.hibernate.dialect.Dialect - HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-17 20:29:50 - WARN - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 20:29:50 - INFO - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 20:29:50 - INFO - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 20:29:50 - WARN - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-17 20:29:50 - INFO - o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name adminService
+2024-12-17 20:29:50 - INFO - o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-12-17 20:29:50 - INFO - o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8087"]
+2024-12-17 20:29:50 - INFO - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-12-17 20:29:50 - INFO - c.e.g.GestionhotelApplication - Started GestionhotelApplication in 1.056 seconds (process running for 394.105)
+2024-12-17 20:29:50 - INFO - o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-12-17 20:29:57 - INFO - o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17 20:29:57 - INFO - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-17 20:29:57 - INFO - o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-17 20:29:57 - WARN - c.e.g.C.admin.LoginController - Login failed for user: admin. Error: {}
