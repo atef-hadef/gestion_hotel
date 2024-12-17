@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TeamController {
     @GetMapping("/team")
     String index( Model model) {
-        return "team";
+        return "VueClient/team";
     }
 }

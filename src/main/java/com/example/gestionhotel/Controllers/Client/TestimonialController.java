@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TestimonialController {
     @GetMapping("/testimonial")
     String index( Model model) {
-        return "testimonial";
+        return "VueClient/testimonial";
     }
 }

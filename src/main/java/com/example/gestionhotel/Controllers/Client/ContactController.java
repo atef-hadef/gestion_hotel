@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ContactController {
     @GetMapping("/contact")
     String contact(Model model) {
-        return "contact";
+        return "VueClient/contact";
     }
 }

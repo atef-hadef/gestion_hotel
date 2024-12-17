@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ServiceController {
     @GetMapping("/service")
     String index( Model model) {
-        return "service";
+        return "VueClient/service";
     }
 }

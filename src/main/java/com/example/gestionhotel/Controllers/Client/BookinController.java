@@ -10,6 +10,6 @@ public class BookinController {
     @PreAuthorize("isAuthenticated()")
     @GetMapping("/booking")
     String index( Model model) {
-        return "booking";
+        return "VueClient/booking";
     }
 }

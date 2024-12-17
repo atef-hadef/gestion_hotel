@@ -40,7 +40,7 @@ public class ReservationController {
 
         model.addAttribute("reservations", reservations);
 
-        return "reservation";
+        return "VueAdmin/reservation";
     }
 
     @GetMapping("/dashboard/ajouter")
@@ -48,7 +48,7 @@ public class ReservationController {
         List<Chambre> chambres = chambreRepository.findAll();
         model.addAttribute("chambres", chambres);
 
-        return "reservation";
+        return "VueAdmin/reservation";
     }
 
     private Date convertToDate(LocalDate localDate) {
@@ -67,7 +67,6 @@ public class ReservationController {
             @RequestParam("nom_client") String nom_client,
             RedirectAttributes redirectAttributes) {
 
-        // Vérification si la chambre existe
         if (!chambreRepository.existsById(numero_ch)) {
             redirectAttributes.addFlashAttribute("error", "Le numéro de chambre " + numero_ch + " n'existe pas.");
             return "redirect:/dashboardr"; // Redirection vers le formulaire
@@ -101,7 +100,7 @@ public class ReservationController {
 
     @GetMapping("/check")
     public String showCheckForm(Model model) {
-        return "checkResult";  // A view to show the form
+        return "VueAdmin/checkResult";
     }
 
     @PostMapping("/check")
@@ -111,7 +110,7 @@ public class ReservationController {
                                      Model model) {
         String result = reservationService.checkDisponibilite(numero_ch, date_arrive, date_sortir);
         model.addAttribute("message", result);
-        return "checkResult";  // Retourner une vue avec le résultat
+        return "VueAdmin/checkResult";  // Retourner une vue avec le résultat
     }
     //////////////////////delete///////////////////////////////////
 
@@ -128,7 +127,7 @@ public class ReservationController {
             reservationService.getReservationById(id).ifPresent(reservation -> model.addAttribute("reservation", reservation));
             List<Chambre> chambre = chambreRepository.findAll();
             model.addAttribute("chambre", chambre);
-            return "formulaireReservation";
+            return "VueAdmin/formulaireReservation";
         }
 
     @PostMapping("/edit/{id}")
@@ -143,7 +142,7 @@ public class ReservationController {
         List<Reservation> reservations = reservationService.searchReservation(keyword);
         model.addAttribute("reservations", reservations);
         model.addAttribute("keyword", keyword);
-        return "reservation"; // Correspond au fichier Thymeleaf
+        return "VueAdmin/reservation";
     }
 
 

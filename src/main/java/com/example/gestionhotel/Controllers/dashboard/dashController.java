@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class dashController {
     @GetMapping("/dash")
     String index( Model model) {
-        return "dashboard";
+        return "VueAdmin/dashboard";
     }
 }

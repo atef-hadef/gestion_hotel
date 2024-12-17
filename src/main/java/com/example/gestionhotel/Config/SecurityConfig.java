@@ -26,7 +26,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/dashboardr", "/dash", "/chambre", "/modifier/{id}", "/edit/{id}")
+                        .requestMatchers("/dashboardr", "/dash", "/chambre", "/modifier/{id}", "/edit/{id}", "/check","chambre/list","/chambre/ajouter","/chambre/supprimer/{id}","/dashboard/ajouter","/dashboard/supprimer/{id}","reservation/list")
                         .hasRole("ADMIN")  // Autoriser uniquement les utilisateurs avec le rôle ADMIN
                         .anyRequest().permitAll()  // Toutes les autres requêtes sont permises
                 )

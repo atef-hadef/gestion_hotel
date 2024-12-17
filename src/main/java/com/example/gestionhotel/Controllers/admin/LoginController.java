@@ -28,7 +28,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String showLoginPage() {
-        return "login";
+        return "VueAdmin/login";
     }
 
     @PostMapping("/login")
@@ -42,7 +42,7 @@ public class LoginController {
             logger.warn("Tentative de connexion échouée pour : {}", username);
 
             model.addAttribute("error", "Nom d'utilisateur ou mot de passe incorrect.");
-            return "login";
+            return "VueAdmin/login";
         }
 
 

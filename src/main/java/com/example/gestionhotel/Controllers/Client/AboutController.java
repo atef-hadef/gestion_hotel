@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AboutController {
     @GetMapping("/about")
     String about() {
-        return "about";
+        return "VueClient/about";
     }
 }

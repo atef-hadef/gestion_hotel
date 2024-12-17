@@ -21,6 +21,6 @@ public class HomeControllers {
     public String getAllRooms(Model model) {
         List<Chambre> chambres = chambreRepository.findAll();
         model.addAttribute("chambres", chambres);
-        return "home";
+        return "VueClient/home";
     }
 }

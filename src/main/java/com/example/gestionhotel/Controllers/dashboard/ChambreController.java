@@ -35,13 +35,13 @@ public class ChambreController {
         model.addAttribute("chambres", chambres);
 
 
-        return "chambre";
+        return "VueAdmin/chambre";
     }
 
     @GetMapping("/chambre/ajouter")
     public String showAddChambreForm(Model model) {
         model.addAttribute("chambres", chambreRepository.findAll());
-        return "chambre";
+        return "VueAdmin/chambre";
     }
 
     @PostMapping("/chambre/ajouter")
@@ -63,18 +63,18 @@ public class ChambreController {
 
         chambreRepository.save(chambre);
 
-        return "redirect:/chambre";  // Rediriger vers la liste des réservations
+        return "redirect:/chambre";
     }
     @PostMapping("/chambre/supprimer/{id}")
     public String deleteReservation(@PathVariable Integer id) {
-        chambreService.deleteChambre(id);  // Ensure this method exists in your service
-        return "redirect:/chambre";  // Redirect to the dashboard or wherever you need
+        chambreService.deleteChambre(id);
+        return "redirect:/chambre";
     }
 
     @GetMapping("/modifier/{id}")
     public String afficherFormulaireModification(@PathVariable Integer id, Model model) {
         chambreService.getChambreById(id).ifPresent(chambre -> model.addAttribute("chambre", chambre));
-        return "formulaire";
+        return "VueAdmin/formulaire";
     }
 
     @PostMapping("/modifier/{id}")
@@ -89,7 +89,7 @@ public class ChambreController {
         List<Chambre> chambres = chambreService.searchChambres(keyword);
         model.addAttribute("chambres", chambres);
         model.addAttribute("keyword", keyword);
-        return "chambre"; // Correspond au fichier Thymeleaf
+        return "VueAdmin/chambre";
     }
 
 }

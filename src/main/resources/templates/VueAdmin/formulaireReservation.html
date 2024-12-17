@@ -71,9 +71,10 @@
     </style>
 </head>
 <body>
-<h1 th:if="${reservation.idReservation != null}">Modifier reservation</h1>
-<h1 th:if="${reservation.idReservation == null}">Ajouter une reservation</h1>
+
 <form th:action="@{/edit/{id}(id=${reservation.idReservation})}" th:object="${reservation}" method="post" enctype="multipart/form-data">
+    <h1 th:if="${reservation.idReservation != null}">Modifier reservation</h1>
+    <h1 th:if="${reservation.idReservation == null}">Ajouter une reservation</h1>
     <label for="nom_client">Nom du client:</label>
     <input type="text" id="nom_client" name="nom_client" th:value="${reservation.nom_client}" required>
     <br>
@@ -91,11 +92,11 @@
     <br>
 
     <label for="date_arrive">Date d'arrivée:</label>
-    <input type="date" id="date_arrive" name="date_arrive" th:value="${#dates.format(reservation.date_arrive, 'yyyy-MM-dd')}" required>
+    <input type="date" id="date_arrive" name="date_arrive" th:field="*{date_arrive}" required>
     <br>
 
     <label for="date_sortir">Date de départ:</label>
-    <input type="date" id="date_sortir" name="date_sortir" th:value="${#dates.format(reservation.date_sortir, 'yyyy-MM-dd')}" required>
+    <input type="date" id="date_sortir" name="date_sortir" th:field="*{date_sortir}" required>
     <br>
 
     <label for="montant_total">Montant total:</label>
@@ -107,7 +108,8 @@
     <br>
 
     <button type="submit">Enregistrer les modifications</button>
+    <a href="/dashboardr">Retour à la liste</a>
 </form>
-<a href="/dashboardr">Retour à la liste</a>
+
 </body>
 </html>
