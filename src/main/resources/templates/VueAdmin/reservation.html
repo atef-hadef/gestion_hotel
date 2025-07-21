@@ -102,6 +102,13 @@
         <!-- Navbar End -->
 
         <!-- Clubs Management Page -->
+        <div th:if="${success}" class="alert alert-success">
+            <span th:text="${success}"></span>
+        </div>
+        <div th:if="${error}" class="alert alert-danger">
+            <span th:text="${error}"></span>
+        </div>
+
         <div class="container my-5">
             <h2 class="text-center mb-4">Manage Reservation</h2>
 

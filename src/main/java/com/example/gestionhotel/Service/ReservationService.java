@@ -67,7 +67,7 @@ public class ReservationService {
                     .map(Reservation::getDate_sortir)
                     .max(LocalDate::compareTo)
                     .orElseThrow(() -> new RuntimeException("Erreur de date de réservation"));
-            return "La chambre n'est pas disponible. La dernière réservation se termine le : " + dernierJour;
+            return "La chambre "+numero_ch+" n'est pas disponible. La dernière réservation se termine le : " + dernierJour;
         }
 
         return "La chambre est disponible.";

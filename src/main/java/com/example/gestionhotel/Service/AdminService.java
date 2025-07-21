@@ -29,8 +29,13 @@ public class AdminService implements org.springframework.security.core.userdetai
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // Cherche l'utilisateur dans la base de données
         Admin admin = adminRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-                 logger.warn("Login failed for user: {}. Error: {}", username);
+                .orElseThrow(() -> {
+                    logger.warn("Login failed for user: {}. User not found.", username);
+                    return new UsernameNotFoundException("User not found");
+                });
+
+        // Log de succès (facultatif)
+        logger.info("User '{}' successfully loaded", username);
 
         // Retourne un objet User avec les informations de l'utilisateur
         return User.builder()

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -66,6 +67,18 @@ public class ReservationController {
             @RequestParam("cin") Integer cin,
             @RequestParam("nom_client") String nom_client,
             RedirectAttributes redirectAttributes) {
+
+        // Vérification de la validité du numéro de chambre
+        if (!chambreRepository.existsById(numero_ch)) {
+            redirectAttributes.addFlashAttribute("error", "Le numéro de chambre " + numero_ch + " n'existe pas.");
+            return "redirect:/dashboardr";
+        }
+
+        // Vérification des dates
+        if (date_arrive.isAfter(date_sortir) || date_arrive.isEqual(date_sortir)) {
+            redirectAttributes.addFlashAttribute("error", "La date d'arrivée doit être avant la date de sortie.");
+            return "redirect:/dashboardr";
+        }
 
         if (!chambreRepository.existsById(numero_ch)) {
             redirectAttributes.addFlashAttribute("error", "Le numéro de chambre " + numero_ch + " n'existe pas.");
