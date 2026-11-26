@@ -43,7 +43,7 @@ flowchart LR
     SEC[Spring Security] -.protects.-> C
 ```
 
-Source layout: `Controller → Service → Repository → Entity (Chambre, Reservation, Admin)`, configuration in `Config/SecurityConfig.java`.
+Source layout: `Controllers → Service → Repository → Models (Chambre, Reservation, Admin)`, configuration in `Config/SecurityConfig.java`.
 
 ## Tech stack
 
@@ -77,10 +77,10 @@ The application starts on **http://localhost:8087**. Tables are created automati
 src/main/
 ├── java/com/example/gestionhotel/
 │   ├── Config/        Spring Security configuration
-│   ├── Controller/    client and admin controllers
+│   ├── Controllers/   client and admin controllers
 │   ├── Service/       business logic
 │   ├── Repository/    Spring Data JPA repositories
-│   └── Entity/        Chambre, Reservation, Admin
+│   └── Models/        entities: Chambre, Reservation, Admin
 └── resources/
     ├── templates/     VueClient/ (public) and VueAdmin/ (admin)
     └── static/        CSS, JS, images
